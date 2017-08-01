@@ -19,6 +19,9 @@ html
 		script(src='/js/funk.js?v=' + bag.jshash)
 		script(src='/js/blockchain.js?v=' + bag.jshash)
 		script(src='/js/ui_building.js?v=' + bag.jshash)
+
+		script(src='/js/util/FileSaver.js?v=' + bag.jshash)
+
 		script(type='text/javascript').
 			var bag = !{JSON.stringify(bag)};						//throw json over to JS
 			console.log('bag', bag);
@@ -28,17 +31,17 @@ html
 				});
 			});
 		block custom_header
-		
+
 		body
 			#rightEverything
 				#tint
-				
+
 				#navPanel
 					block navpanel
-				
+
 				#mainPanel
 					block content
-					
+
 				br
 				br
 				br

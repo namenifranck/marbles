@@ -1,30 +1,88 @@
 #createPanel(hidden).panel
-	
+
 	span.fa.fa-close#closeCreate
 
-	h2 Create Marble
+	h2 Choisir un article
 	hr
-	
+
+
 	#innerWrap
-		span.createball
-		
+
+		#content
+			#header_content
+			#left_content
+				fieldset#magazine
+					legend magazine
+					span
+							img(src="/imgs/magazine/glamour.jpg", alt='Glamour_50_1').img
+							img(src="/imgs/magazine/montres.jpg", alt='Montres_100_2').img
+							img(src="/imgs/magazine/time.jpg", alt='Time_100_3').img
+							img(src="/imgs/magazine/wired.jpg", alt='Wired_75_4').img
+							img(src="/imgs/magazine/young_entrepreneur.jpg", alt='Young entrepreneur_200_5').img
+
+				fieldset#parfum
+					legend parfum
+					span
+								img(src="/imgs/parfum/CK-one-summer.jpeg", alt='CK-one-summer_40_6').img_parfum
+								img(src="/imgs/parfum/guerlain-homme-ideal.jpeg", alt='guerlain-homme-ideal_80_7').img_parfum
+								img(src="/imgs/parfum/guerlain-petiterobenoire.jpeg", alt='guerlain-petiterobenoire_75_8').img_parfum
+								img(src="/imgs/parfum/lancome-lveb.jpeg", alt='lancome-lveb_75_9').img_parfum
+								img(src="/imgs/parfum/Scandal.jpeg", alt='Scandal_65_10').img_parfum
+
+				fieldset#electronique
+					legend electronique
+					span
+								img(src="/imgs/electronique/akita-powerpack.jpeg", alt='akita-powerpack_90_11').img_electronique
+								img(src="/imgs/electronique/bose-QC35.jpeg", alt='bose-QC35_340_12').img_electronique
+								img(src="/imgs/electronique/CASIO-Montre-Connectee.jpeg", alt='Montre-casio_300_13').img_electronique
+								img(src="/imgs/electronique/kyutec-camerapen1.jpeg", alt='kyutec-camerapen1_80_14').img_electronique
+								img(src="/imgs/electronique/LIF-Drumbass-1.jpeg", alt='LIF-Drumbass-1_65_15').img_electronique
+
+
+			#right_content 3
+					#contenuPanier
+						span#detailPanier
+							table#tableau.table
+								thead
+									th Code Produit
+									th Qte
+									th prix unitaire
+									th prix de la ligne
+									th supprimer
+						br
+					#milesTotal
+							label prix du panier total :&nbsp;
+							label#prixTotal
+							button#Commander(type="button") Commander
+							input#nbreLignes(type='hidden', value=0 )
+
+			#footer_content 4
+
+
+//------------------------------
+//End new content
+//------------------------------
+
+	//#innerWrap
+		//span.createball
+
 		form(action="/create" method="POST")#createform
-			//legend 
+			//legend
 			//input(type="hidden" name="name" placeholder="Name Your Marble")
 			//span.hint &nbsp;&nbsp;RANDOM OR CUSTOM STRING
-			
+
 			//br
 			legend
 				include ./template/color_options.pug
-				
+
 			br
-			legend 
+			legend
 				select(name="size")
 					option(value="35" disabled="disabled") Size
 					option(value="35" selected="selected") Large
 					option(value="16") Small
 			br
-			legend 
+			legend
 				select(name="user" disabled="disabled")
 					option(value="" disabled="disabled" selected="selected") User
 			input(type="hidden" name="company" value="")
@@ -34,6 +92,4 @@
 			br
 			button(type="button")#createMarbleButton
 				span.fa.fa-plus-circle &nbsp;&nbsp;
-				span CREATE
-			
-			
+				span Passer la commande

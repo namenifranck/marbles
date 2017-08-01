@@ -1,6 +1,6 @@
 extends ./template/layout.pug
-	
-	
+
+
 block custom_header
 	// --------------- Header -------------- //
 	script(src='/js/ui_events.js?v=' + bag.jshash)
@@ -9,31 +9,30 @@ block custom_header
 	script(src='/js/tx_story.js?v=' + bag.jshash)
 	script(type='text/javascript').
 		$(document).ready(function(){
-			
+
 		});
-		
-		
+
+
 block navpanel
 	// --------------- Navigation Bar  -------------- //
 	include ./template/nav.pug
-	
-	
+
 block content
 	// --------------- Main Stuff  -------------- //
 	#notificationsWrap
 		#noticeScrollWrap
 			#emptyNotifications.hint No Notifications
-		#notificationHandle 
+		#notificationHandle
 			span.fa.fa-angle-down
 
-	#auditButton 
+	#auditButton
 		span.fa.fa-search
-			
+
 	#contentPanel
-		
+
 		// --------------- Home Panel
 		include ./panel_home.pug
-		
+
 		// --------------- Create Panel
 		include ./panel_create.pug
 
@@ -45,6 +44,10 @@ block content
 
 		// --------------- Settings Panel
 		include ./panel_settings.pug
-		
+
+		// --------------- panier Panel
+		include ./panel_panier.pug
+
+
 block footer
 	include ./template/blockchain.pug
